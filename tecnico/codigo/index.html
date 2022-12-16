@@ -1,0 +1,57 @@
+<!DOCTYPE HTML><html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; }
+      h2 { font-size: 3.0rem; } p { font-size: 3.0rem; } .units { font-size: 1.2rem; } 
+      .ds-labels{ font-size: 1.5rem; vertical-align:middle; padding-bottom: 15px; }
+    </style></head><body><h2>SMAC</h2>
+    <div id="timer"></div>
+    <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
+      <span class="ds-labels">Temperature</span>
+      <!-- <span id="temperature">""" + str(temp) + """</span> -->
+      <span id="temperatura"></span>
+      <button id="botao">pede temp</button>
+      <sup class="units">&deg;C</sup>
+    </p>
+      <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
+      <span class="ds-labels">Temperature</span>
+      <!-- <span id="temperature">""" + str(round(temp * (9/5) + 32.0, 2)) + """</span> -->
+      <sup class="units">&deg;F</sup>
+    </p>
+    
+    <script>
+    window.addEventListener('load', () => {
+        let btn = document.getElementById("botao")
+  
+        btn.addEventListener("click", () => {
+        fetch("/pega_temp").then(data => {
+            data.json().then(response => {
+                document.getElementById('temperatura').innerText = response
+            })
+        })
+        })
+    })
+    
+    
+    function startTimer(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+          display.textContent = minutes + ":" + seconds;
+          if (--timer < 0) {
+              timer = duration;
+          }
+      }, 1000);
+  }
+  window.onload = function () {
+      var duration = 60 * 5; // Converter para segundos
+          display = document.querySelector('#timer'); // selecionando o timer
+      startTimer(duration, display); // iniciando o timer
+  };
+    </script>
+    
+    
+    </body></html>
