@@ -39,6 +39,14 @@
                 })
             })
         }, 3000)
+
+        setInterval(function(){  
+            fetch("/pega_mexer").then(data => {
+                data.json().then(response => {
+                    if(response == true) window.location.reload(true)
+                })
+            })
+        }, 3000)
     })
     
     
@@ -51,7 +59,8 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           display.textContent = minutes + ":" + seconds;
           if (--timer < 0) {
-              timer = duration;
+            alert("SE MEXA!");  
+            timer = duration;
           }
       }, 1000);
   }

@@ -46,9 +46,9 @@ def moving():
   newMoving.sort()
   oldMoving.sort()
   if(oldMoving!=newMoving):
-    return 1
+    return True
     # mexeu
-  return 0
+  return False
 
 
 
@@ -93,8 +93,7 @@ while True:
       conn.send('HTTP/1.1 200 OK\n')
       conn.send('Content-Type: application/json\n')
       conn.send('Connection: close\n\n')
-      mexer = moving()
-      conn.sendall(dumps(str(mexer)))
+      conn.sendall(dumps(moving()))
       
     conn.close()
   except OSError as e:
