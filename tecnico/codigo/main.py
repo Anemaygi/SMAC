@@ -88,6 +88,13 @@ while True:
       conn.send('Connection: close\n\n')
       temp = read_ds_sensor()
       conn.sendall(dumps(str(temp)))
+
+    elif request.find('GET /pega_mexer HTTP/1.1') != -1:
+      conn.send('HTTP/1.1 200 OK\n')
+      conn.send('Content-Type: application/json\n')
+      conn.send('Connection: close\n\n')
+      mexer = moving()
+      conn.sendall(dumps(str(mexer)))
       
     conn.close()
   except OSError as e:
