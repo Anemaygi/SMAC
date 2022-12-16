@@ -9,27 +9,36 @@
     <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
       <span class="ds-labels">Temperature</span>
       <!-- <span id="temperature">""" + str(temp) + """</span> -->
-      <span id="temperatura"></span>
-      <button id="botao">pede temp</button>
+      <span id="temperaturac"></span>
+      <!-- <button id="botao">pede temp</button> -->
       <sup class="units">&deg;C</sup>
     </p>
-      <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
+      <!-- <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
       <span class="ds-labels">Temperature</span>
-      <!-- <span id="temperature">""" + str(round(temp * (9/5) + 32.0, 2)) + """</span> -->
+       coment <span id="temperature">""" + str(round(temp * (9/5) + 32.0, 2)) + """</span>
+      <span id="temperaturaf"></span>
       <sup class="units">&deg;F</sup>
-    </p>
+    </p> -->
     
     <script>
     window.addEventListener('load', () => {
-        let btn = document.getElementById("botao")
+        // let btn = document.getElementById("botao")
   
-        btn.addEventListener("click", () => {
-        fetch("/pega_temp").then(data => {
-            data.json().then(response => {
-                document.getElementById('temperatura').innerText = response
+        // btn.addEventListener("click", () => {
+        //     fetch("/pega_temp").then(data => {
+        //         data.json().then(response => {
+        //             document.getElementById('temperatura').innerText = response
+        //         })
+        //     })
+        // })
+        setInterval(function(){  
+            fetch("/pega_temp").then(data => {
+                data.json().then(response => {
+                    document.getElementById('temperaturac').innerText = response
+                    
+                })
             })
-        })
-        })
+        }, 3000)
     })
     
     
