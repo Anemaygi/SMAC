@@ -23,19 +23,26 @@ O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o pro
 | X | Jumpers variados | --- |
 | 1 | Protoboard | --- |
 | 1 | Resistor 100 ohms | --- |
-| 1 | Fonte de alimentação - PowerBank | https://www.baudaeletronica.com.br/suporte-para-4-pilhas-aa.html |
+| 1 | Fonte de alimentação - PowerBank | https://www.americanas.com.br/produto/2706391331 |
 
-Notas: É possível fazer a montagem somente com jumpers (sem protoboard) e recebendo energia do computador através da porta USB. Talvez seja a situação mais comum. Entretanto, há computadores que não fornecem energia suficiente através da porta USB, em outros casos, o acionamento do motor causa falha da comunicação entre computador e NodeMCU. Nesses casos pode ser conveniente usar uma fonte externa de energia (ex. pilhas, carregador de celular, ...).
+**Nota**: Para fazer o acoplamento na almofada, uma protoboard de 400 pontos foi cortada ao meio, ocupando menos espaço.
 
 ### Conexões
 
-| Pino do NodeMCU | Pino do Motor | Pino das pilhas |
-| --- | --- | --- |
-| 25 | Laranja | --- |
-| GND | Marrom | Preto (Negativo das pilhas) |
-| --- | Vermelho | Vermelho (Positivo das pilhas |
+| Componente | Pino da placa |
+| --- | --- |
+| Sensor de Toque A | 21 |
+| Sensor de Toque B | 19 |
+| Sensor de Toque C | 23 |
+| Sensor de Toque D | 22 |
+| Sensores de temperatura | 4 |
 
-**Nota**: Não conectar qualquer outro pino do NodeMCU ou do motor ao positivo das pilhas. Isso conecta 6V ao Node ou ao motor, o que pode (não necessariamente vai) danificar o Node e/ou a porta USB do computador.
+**Nota**: O sensor de temperatura DS18B20 permite que sejam adicionados múltiplos sensores num mesmo pino, economizando conexões da placa. Para utilizá-lo, é necessário utilizar o resistor de 100 ohm seguindo o diagrama abaixo.
+
+Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
+
+![Conexão com múltiplos sensores DS18B20](./src/ds18b20_esp32_multiple.webp) 
+
 
 ## Explica como montar o dispositivo físico
 
