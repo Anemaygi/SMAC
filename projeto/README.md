@@ -16,7 +16,24 @@ Os cadeirantes, na sua maioria, têm a sensibilidade abaixo da cintura compromet
 ### Materias
 
 Um protótipo foi desenvolvido sobre um assento de espuma de poliuretano, dimensões 40 x 40 x 5 cm, com capa em tecido de malha 100% filamentos sintéticos de poliéster, com velcro para fixação na cadeira de rodas.
-Usados 4 sensores de toque (presença) e 4 sensores de temperatura foram instalados na superfície do assento, mediante recortes na espuma, para alojamento dos dispositivos TTP223B (Sensor de Toque), DS18B20 (Sensor de Temperatura) e jumpers, ligados à uma placa ESP32 instalada em protoboard de 200 pontos, resultante do corte de uma placa de 400 pontos, para reduzir as dimensões e adequar à fixação no assento.
+
+Para o circuito montado, foram utilizados os seguintes materiais e componentes:
+
+| Quantidade | Nome | Link para referência | Valor total |
+| --- | --- | --- | -- |
+| 1 | ESP32 e cabo USB | https://www.baudaeletronica.com.br/placa-doit-esp32-bluetooth-e-wifi.html | R$ 60,21 |
+| 4 | Sensor de Toque Touch Capacitivo TTP223B | https://www.baudaeletronica.com.br/sensor-touch-capacitivo-ttp223b.html | R$ 14,36 |
+| 4 | Sensor de Temperatura Digital DS18B20 | https://shopee.com.br/product/329956775/4576392175/ | R$ 27,60 |
+| X | Jumpers variados | --- | --- |
+| 1 | Protoboard | --- | R$ 5,00 |
+| 1 | Resistor 100 ohms | --- | --- |
+| 1 | Fonte de alimentação - PowerBank | https://www.americanas.com.br/produto/2706391331 | R$ 20,99 |
+
+**Valor total:** R$ 128,16
+
+Os 4 sensores de toque (presença) e 4 sensores de temperatura foram instalados na superfície do assento, mediante recortes na espuma, para alojamento dos dispositivos TTP223B (Sensor de Toque), DS18B20 (Sensor de Temperatura) e jumpers, ligados à uma placa ESP32 instalada em protoboard de 200 pontos, resultante do corte de uma placa de 400 pontos, para reduzir as dimensões e adequar à fixação no assento.
+
+Para mais informações do circuito, visite o [relatório técnico](../tecnico/)
 
 Figura 1 - Protótipo sem a capa
 
@@ -38,10 +55,10 @@ Figura 3 - Uso do soprador térmico direcionado ao termômetro sobre o ponto do 
 
 ## Resultados
 
-O custo dos componentes eletrônicos é de aproximadamente R$ 100,00, os quais, são indicados para instalação no assento já existente.
+O custo dos componentes eletrônicos é de aproximadamente R$ 107,17 (sem o powerbank), os quais, são indicados para instalação no assento já existente.
 O assento com poliuretano e capa de malha com velcro custou R$150,00, tem densidade 33 e permite cuidados com a capa de acordo com a informações do fabricante do tecido.
 O sistema pode ser alimentado por “power bank” com porta USB.
-É um produto usável, vestível, confortável, com visual “clean” sem alterar as características originais da cadeira de rodas.
+É um produto usável, vestível, confortável, com visual “clean” sem alterar as características originais da cadeira de rodas. Sendo assim, é versátil e combina com o gosto da maioria das pessoas.
  
 ## Conclusão
 
