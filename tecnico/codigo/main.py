@@ -23,39 +23,36 @@ newMoving = []
 def moving():
   print("touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value()))
   oldMoving = newMoving
-  if(sensorA == 1) newMoving.append["A"]
-  else if(sensorA == 0):
+  if touchA.value() == 1:
+    newMoving.append("A")
+  elif touchA.value() == 0:
     if "A" in newMoving:
       newMoving.remove("A")
   
-  if(sensorB == 1) newMoving.append["B"]
-  else if(sensorB == 0):
+  if touchB.value() == 1:
+    newMoving.append("B")
+  elif touchB.value() == 0:
     if "B" in newMoving:
       newMoving.remove("B")
   
-  if(sensorC == 1) newMoving.append["C"]
-  else if(sensorC == 0):
+  if touchC.value() == 1:
+    newMoving.append("C")
+  elif(touchC.value() == 0):
     if "C" in newMoving:
       newMoving.remove("C")
     
-  if(sensorD == 1) newMoving.append["D"]
-  else if(sensorD == 0):
+  if touchD.value() == 1:
+    newMoving.append("D")
+  elif touchD.value() == 0:
     if "D" in newMoving:
       newMoving.remove("D")
   
   newMoving.sort()
   oldMoving.sort()
-  if(oldMoving!=newMoving):
+  if oldMoving!=newMoving:
     return True
     # mexeu
   return False
-
-
-
-
-# def web_page():
-#   with open("index.html") as html:
-#     return html
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('', 80))
@@ -82,18 +79,19 @@ while True:
         conn.send('Connection: close\n\n')
         conn.sendall(response)
         html.close()
-    elif request.find('GET /pega_temp HTTP/1.1') != -1:
+
+    if request.find('GET /pega_temp HTTP/1.1') != -1:
       conn.send('HTTP/1.1 200 OK\n')
       conn.send('Content-Type: application/json\n')
       conn.send('Connection: close\n\n')
       temp = read_ds_sensor()
       conn.sendall(dumps(str(temp)))
 
-    elif request.find('GET /pega_mexer HTTP/1.1') != -1:
-      conn.send('HTTP/1.1 200 OK\n')
-      conn.send('Content-Type: application/json\n')
-      conn.send('Connection: close\n\n')
-      conn.sendall(dumps(moving()))
+    # if request.find('GET /pega_mexer HTTP/1.1') != -1:
+    #   conn.send('HTTP/1.1 200 OK\n')
+    #   conn.send('Content-Type: application/json\n')
+    #   conn.send('Connection: close\n\n')
+    #   conn.sendall(dumps(moving()))
       
     conn.close()
   except OSError as e:
