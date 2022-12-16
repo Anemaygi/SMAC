@@ -2,7 +2,7 @@
 
 Sistema de Monitoramento para Assentos de Cadeira de Roda
 
-![Ilustrativo](./src/ilustrativo.jpeg) 
+![Ilustrativo](../src/ilustrativo.jpeg) 
 
 
 ## Descrição
@@ -42,7 +42,7 @@ O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o pro
 
 Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
-![Conexão com múltiplos sensores DS18B20](./src/ds18b20_esp32_multiple.webp) 
+![Conexão com múltiplos sensores DS18B20](../src/ds18b20_esp32_multiple.webp) 
 
 
 ## Explica como montar o dispositivo físico

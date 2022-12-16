@@ -2,7 +2,7 @@
 
 **SMAC** - Sistema de Monitoramento para Assentos de Cadeira de Roda
 
-![Ilustrativo](./src/ilustrativo.jpeg) 
+![Ilustrativo](../src/ilustrativo.jpeg) 
 
 ## Introdução
 
@@ -20,7 +20,7 @@ Usados 4 sensores de toque (presença) e 4 sensores de temperatura foram instala
 
 Figura 1 - Protótipo sem a capa
 
-![Sem a capa](./src/capa.png)
+![Sem a capa](../src/capa.png)
 
 ### Métodos
 
@@ -30,11 +30,11 @@ Estes valores são pontos de partida para o cadeirante personalizar seus parâme
 
 Figura 2 - Recobrimento da espuma de poliuretano com a capa de matéria têxtil.
 
-![Ilustrativo](./src/espuma.png) 
+![Ilustrativo](../src/espuma.png) 
 
 Figura 3 - Uso do soprador térmico direcionado ao termômetro sobre o ponto do sensor de temperatura.
 
-![Ilustrativo](./src/soprador.png) 
+![Ilustrativo](../src/soprador.png) 
 
 ## Resultados
 
