@@ -22,6 +22,7 @@ newMoving = []
 
 def moving():
   print("touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value()))
+  oldMoving = newMoving
   if(sensorA == 1) newMoving.append["A"]
   else if(sensorA == 0):
     if "A" in newMoving:
@@ -45,8 +46,10 @@ def moving():
   newMoving.sort()
   oldMoving.sort()
   if(oldMoving!=newMoving):
-    print("mexeuuuuuuuuu")
-  oldMoving = newMoving
+    return 1
+    # mexeu
+  return 0
+
 
 
 
