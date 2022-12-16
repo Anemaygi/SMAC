@@ -17,11 +17,13 @@ O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o pro
 
 | Quantidade | Nome | Link para referência |
 | --- | --- | --- |
-| 1 | NodeMCU com ESP32 e cabo USB | https://www.usinainfo.com.br/nodemcu/esp32-nodemcu-iot-com-wifi-e-bluetooth-30-pinos-5147.html |
-| 1 | Servomotor Tower Pro SG90 | https://www.filipeflop.com/produto/micro-servo-9g-sg90-towerpro/ |
+| 1 | ESP32 e cabo USB | https://www.baudaeletronica.com.br/placa-doit-esp32-bluetooth-e-wifi.html |
+| 4 | Sensor de Toque Touch Capacitivo TTP223B | https://www.baudaeletronica.com.br/sensor-touch-capacitivo-ttp223b.html |
+| 4 | Sensor de Temperatura Digital DS18B20 | https://www.baudaeletronica.com.br/sensor-de-temperatura-digital-ds18b20.html |
 | X | Jumpers variados | --- |
-| {0,1} | protoboard | --- |
-| {0,1} | fonte de alimentação - 4 pilhas e um suporte | https://www.baudaeletronica.com.br/suporte-para-4-pilhas-aa.html |
+| 1 | Protoboard | --- |
+| 1 | Resistor 100 ohms | --- |
+| 1 | Fonte de alimentação - PowerBank | https://www.baudaeletronica.com.br/suporte-para-4-pilhas-aa.html |
 
 Notas: É possível fazer a montagem somente com jumpers (sem protoboard) e recebendo energia do computador através da porta USB. Talvez seja a situação mais comum. Entretanto, há computadores que não fornecem energia suficiente através da porta USB, em outros casos, o acionamento do motor causa falha da comunicação entre computador e NodeMCU. Nesses casos pode ser conveniente usar uma fonte externa de energia (ex. pilhas, carregador de celular, ...).
 
