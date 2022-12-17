@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./src/SMAC.png" width="200" />
+</p>
 
 <div style="text-align:center"><img width="10%" src="./src/SMAC.png" /></div>
 
