@@ -4,6 +4,7 @@ Sistema de Monitoramento para Assentos de Cadeira de Roda
 
 ![Ilustrativo](../src/ilustrativo.jpeg) 
 
+<br/>
 
 ## Descrição
 
@@ -13,13 +14,15 @@ Clicar no botão OFF para abrir, clicar no botão ON para fechar.
 
 O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o programa é iniciado, o IP é mostrado no REPL ou na IDE que você estiver usando. Navegar para <IP>:3000 o que mostra a página com dois botões. O programa executado pelo Node é `digitalLocker.py`.
 
+<br/>
+
 ### Lista de Materiais
 
 | Quantidade | Nome | Link para referência |
 | --- | --- | --- |
 | 1 | ESP32 e cabo USB | https://www.baudaeletronica.com.br/placa-doit-esp32-bluetooth-e-wifi.html |
 | 4 | Sensor de Toque Touch Capacitivo TTP223B | https://www.baudaeletronica.com.br/sensor-touch-capacitivo-ttp223b.html |
-| 4 | Sensor de Temperatura Digital DS18B20 | https://www.baudaeletronica.com.br/sensor-de-temperatura-digital-ds18b20.html |
+| 4 | Sensor de Temperatura Digital DS18B20 tipo TO92 | https://www.baudaeletronica.com.br/sensor-de-temperatura-digital-ds18b20.html |
 | X | Jumpers variados | --- |
 | 1 | Protoboard | --- |
 | 1 | Resistor 100 ohms | --- |
@@ -43,11 +46,13 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 ![Conexão com múltiplos sensores DS18B20](../src/ds18b20_esp32_multiple.webp) 
 
+<br/>
 
 ## Montagem do dispositivo físico
 
 Fazer as conexões listadas, configurar, transferir e executar `digitalLocker.py` no Node e navegar para o IP indicado pelo Node.
 
+<br/>
 
 ## Funcionamento do sistema
 
@@ -66,21 +71,22 @@ São três os arquivos utilizados pelo sistema<br/>
 ├── index.html
 ``` 
 <br/>
-A explicação do que cada parte de código faz pode ser encontrada no [README.md do diretório "codigo"](./codigo)
+
+A explicação de como o programa foi feito e do que cada parte de código faz pode ser encontrada no [README.md do diretório "codigo"](./codigo)
+
 <br/>
 Para executar o SMAC, é necessário passar os três arquivos (`boot.py`, `main.py`, `index.html`) para a placa. Após isso, a placa enviará o endereço IP local para a saída em sua porta 80 (padrão web). 
+
+<br/>
+
 É possível acessá-lo por qualquer dispositivo que **esteja na mesma rede**, basta colocar o IP de saída no navegador. 
 O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 <p align="center">
-  <img src="./src/cadeiraatras.jpg" width="200" /><br/>
+  <img src="../src/cadeiraatras.jpg" width="200" /><br/>
 </p>
 
-
-## Explica como o programa foi feito
-
-
-
+<br/>
 
 ## Arquitetura e organização
 
@@ -96,26 +102,37 @@ Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
 
 ![camadas](/docs/layerModel.png)
 
+<br/>
+
 ## Funcionamento dos sensores
 
-### Sensor de temperatura DS18B20
+### Sensor de temperatura DS18B20 tipo TO92
+
+O DS18B20 é um sensor de temperatural digital que realiza medições na faixa de -55°C até 125°C em graus celsius sem a necessidade de um componente externo para isso. O sensor utiliza o protocolo One-Wire, ou seja, sua comunicação é feita por um único fio de dados (além do VCC e GND), além de possuir um código ID próprio de 64 bits, permitindo a conexão de até 127 sensores num mesmo barramento com endereços diferentes, poupando espaço do projeto. (Especificação técnica: https://www.curtocircuito.com.br/datasheet/sensor/temperatura_DS18B20.pdf)
+
+Este sensor posui precisão de mais ou menos 0,5°C na faixa de medição de -10°C até 85°C. Suas principais características são: 
+- Chip: DS18B20;
+- Tensão de operação: 3 a 5VDC;
+- Consumo: 1,5mA;
+- Comunicação: 1 fio;
+- Faixa de medição: -55° a 125°C;
+- Resolução de saída: 9 a 12 bits (programável);
+- Tempo de conversão: 750ms (12-bits);
+- Precisão: ±0,5 entre -10°C e 85°C;
+
 
 ### Sensor de toque TTP223B
 
-![Quando tiver vídeo da operação com navegador, transferir este para a explicação do servo.](./docs/output.gif)
+O sensor digital de toque TTP223B é de simples funcionamento, mudando o sinal quando há um toque. Sua tensão de operação é entre 2-5, 5V; a saída de estado alto é 0,8V e baixo de 0,3 V. O tempo de resposta é de 220 ms (em estado baixo) e 60 ms (em estado alto), contando com as dimensões de 24 x 24 x 7,2 mm (Especificação técnica: https://files.seeedstudio.com/wiki/Grove-Touch_Sensor/res/TTP223.pdf)
 
-O servomotor é um motor em que o eixo gira menos de uma volta e o ângulo de giro do eixo pode ser controlado. O motor específico desta montagem permite ângulos entre zero e 180 graus (especificação técnica: http://www.datasheet-pdf.com/PDF/SG90-Datasheet-TowerPro-791970). Este motor recebe energia pelos fios marrom (GND) e vermelho (VCC). A tensão de alimentação pode ser algo entre 4V e 7.2V. Nesta montagem será 6V. O fio laranja conduz o sinal de controle para o motor.
-
-O sinal de controle é um trem de pulsos de 20ms (50Hz), com duração do patamar em nível 1 variando entre 1 e 2ms. O ângulo de giro é proporcional à duração do patamar em nível 1. Por exemplo, com pulsos de 1,5ms durante o intervalo de 20ms, o ângulo de giro é de 90 graus (aproximadamente); com pulsos de 2ms, o ângulo é de 180 graus (https://www.engineersgarage.com/servo-motor-sg90-9g-with-89c51-microcontroller/). Esse tipo de sinal pertence à categoria dos sinais em *Pulse Width Modulation* (PWM).
-
-Um sinal PWM é especificado pela frequência e pelo ciclo de carga (*duty-cycle*). O ciclo de carga é o percentual do tempo em que o sinal fica em nível 1 comparado com o período todo do sinal. Por exemplo, um sinal de 50Hz tem período de 20ms. Se o ciclo de carga for 20%, durante 20% desse período (ié 4ms), o sinal fica em nível 1 e o restante do tempo (16ms) fica em nível zero. Se o ciclo de carga for 50%, o patamar 1 dura 10ms e o patamar zero dura 10ms.
-
+<br/>
 
 ## Referências
 
 https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request
 
+<br/>
 
 ## Colaborar usando github (meta)
 
@@ -128,5 +145,10 @@ Quando procurei essa informação, nas postagens, encontrei um material interess
 Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-repo, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks.
 
 ### Features implementadas
+
+- [x] Identificação da mudança de posição na cadeira
+- [x] Cronômetro que reinicia quando há uma mudança de posição na cadeira
+- [x] Identificação da temperatura entre assento e pessoa
+- [x] Alerta quando passa de 37°C ou quando passa de 20 minutos sentado na mesma posição
 
 ### Features para incrementar no projeto
