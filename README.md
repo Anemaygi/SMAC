@@ -1,10 +1,9 @@
 <p align="center">
-  <img src="./src/SMAC.png" width="200" />
+  <img src="./src/SMAC.png" width="300" /><br/>
+  Sistema de Monitoramento para Assentos de Cadeira de Roda
+
 </p>
 
-<div style="text-align:center"><img width="10%" src="./src/SMAC.png" /></div>
-
-Sistema de Monitoramento para Assentos de Cadeira de Roda
 
 ## Resumo do projeto
 
