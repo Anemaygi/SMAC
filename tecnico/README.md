@@ -1,7 +1,7 @@
 # SMAC
 
 <p align="center">
-  <img src="./src/SMAC.png" width="300" /><br/>
+  <img src="../src/SMAC.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda
 </p>
 <br/>
@@ -57,7 +57,19 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 ## Montagem do dispositivo físico
 
-Fazer as conexões listadas
+Faça quatro furos de estilete na almofada. Em cada furo, adicione um sensor de temperatura e um sensor de toque. 
+
+Figura 1 - O circuito no assento sem capa
+
+<p align="center">
+  <img src="../src/capa.png" width="200" /><br/>
+</p>
+
+O circuito segue as conexões listadas no tópico acima.
+
+Figura 2 - Diagrama do circuito
+
+<!-- Colocar diagrama do sistema aqui -->
 
 <br/>
 
@@ -65,11 +77,11 @@ Fazer as conexões listadas
 
 Para rodar o sistema, é necessário:
 
-- Micropython instalado na placa [tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython)
+- Micropython instalado na placa ([tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython))
 
-- ampy para passar os arquivos para a placa [tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf)
+- ampy para passar os arquivos para a placa ([tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf))
 
-- _OPCIONAL:_ picocom para ver as saídas da placa [tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf)
+- _OPCIONAL:_ picocom para ver as saídas da placa ([tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf))
 
 São três os arquivos utilizados pelo sistema<br/>
 ```code
@@ -97,9 +109,9 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 ## Arquitetura e organização
 
-Figura 1 - Feito usando yEd, arquivo-fonte da figura em /docs/Rede.graphml:
+<!-- Figura 1 - Feito usando yEd, arquivo-fonte da figura em /docs/Rede.graphml:
 
-![rede](/docs/Rede.png)
+![rede](/docs/Rede.png) -->
 
 O dispositivo SMAC se conecta ao ponto de acesso wi-fi como um cliente, obtendo um endereço de IP local. Outros dispositivos conectados na mesma rede local podem navegar para o endereço IP (fazendo uma requisição HTTP) e receberão como resposta a [página web](./codigo/index.html).
 
@@ -107,11 +119,19 @@ A página faz novas requisições a cada 3 segundos após ser carregada. Uma req
 
 Após terminar o tempo do cronômetro ou a temperatura ser maior que 37, a página envia um alerta para o usuário se mexer.
 
-O dispositivo pode ser visto como a interconexão do circuito do assento com o modem wifi (embutido no controlador) e o controlador. A interface entre o programador e o hardware do controlador é feita através de Micropython. O programa `boot.py` contém os comandos para conectar ao wifi (como cliente), `main.py` contém os comandos para funcionar como um servidor web e as requisições. Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
+<p align="center">
+  <img src="../src/interface.jpg" height="300" /><img src="../src/interfaceaviso.jpg" height="300" /><br/>
+</p>
 
-Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
 
-![camadas](/docs/layerModel.png)
+O dispositivo pode ser visto como a interconexão do circuito do assento com o modem wifi (embutido no controlador) e o controlador. A interface entre o programador e o hardware do controlador é feita através de Micropython. 
+- O programa `boot.py` contém os comandos para conectar ao wifi (como cliente)
+- `main.py` contém os comandos para funcionar como um servidor web e as requisições
+- Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
+
+<!-- Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
+
+![camadas](/docs/layerModel.png) -->
 
 <br/>
 
@@ -140,20 +160,20 @@ O sensor digital de toque TTP223B é de simples funcionamento, mudando o sinal q
 
 ## Referências
 
-https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
-https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request
+<!-- https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
+https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request -->
 
 <br/>
 
 ## Colaborar usando github (meta)
 
-A maneira indicada pelo mantenedor do github para colaborar com projetos hospedados nele é através de bifurcação e pull request: https://stackoverflow.com/questions/32750228/how-to-contribute-to-someone-elses-repository.
+<!-- A maneira indicada pelo mantenedor do github para colaborar com projetos hospedados nele é através de bifurcação e pull request: https://stackoverflow.com/questions/32750228/how-to-contribute-to-someone-elses-repository.
 
 É possível ser colaborador do projeto e fazer pull/push (https://stackoverflow.com/questions/42619669/how-to-make-branch-from-friends-repository), mas isto pode gerar confusão (quando fiz isso com outra pessoa eu a confundi e ela acabou reiniciando o repositório - `git init` - não foi um bom resultado).
 
 Quando procurei essa informação, nas postagens, encontrei um material interessante sobre a organização (interna) do git: https://stackoverflow.com/tags/git/info
 
-Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-repo, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks.
+Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-repo, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks. -->
 
 ### Features implementadas
 
