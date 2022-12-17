@@ -7,7 +7,6 @@ Sistema de Monitoramento para Assentos de Cadeira de Roda
 
 ## Descrição
 
-
 Na animação, a fechadura foi acessada em 192.168.0.11:3000. Digitar esse endereço (número) na barra de endereço do navegador faz este mostrar a página do digitalLocker.
 
 Clicar no botão OFF para abrir, clicar no botão ON para fechar.
@@ -45,7 +44,7 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 ![Conexão com múltiplos sensores DS18B20](../src/ds18b20_esp32_multiple.webp) 
 
 
-## Explica como montar o dispositivo físico
+## Montagem do dispositivo físico
 
 Fazer as conexões listadas, configurar, transferir e executar `digitalLocker.py` no Node e navegar para o IP indicado pelo Node.
 
@@ -68,7 +67,11 @@ Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
 
 Para executar `digitalLocker.py` no Node, este deve estar carregado com Micropython. Instruções sobre como carregar Micropython neste [link externo](https://github.com/FNakano/CFA/tree/master/programas/Micropython). Depois de carregar, ou transferir o programa ou executá-lo usando, por exemplo WebREPL (instruções neste [link externo]()https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL), ou o método que preferir. No exemplo, uso Thonny e envio `digitalLocker.py` para o Node. No arquivo é definida a função `startServer()`. Desta forma, no REPL, digitar `import digitalLocker` para importar a função e digitar `digitalLocker.startServer()` para iniciar o servidor. Isto é mais cômodo que executar os comandos um por um, seja digitando, seja com copy-paste.
 
-## Explica como o motor funciona
+## Funcionamento dos sensores
+
+### Sensor de temperatura DS18B20
+
+### Sensor de toque TTP223B
 
 ![Quando tiver vídeo da operação com navegador, transferir este para a explicação do servo.](./docs/output.gif)
 
@@ -78,61 +81,13 @@ O sinal de controle é um trem de pulsos de 20ms (50Hz), com duração do patama
 
 Um sinal PWM é especificado pela frequência e pelo ciclo de carga (*duty-cycle*). O ciclo de carga é o percentual do tempo em que o sinal fica em nível 1 comparado com o período todo do sinal. Por exemplo, um sinal de 50Hz tem período de 20ms. Se o ciclo de carga for 20%, durante 20% desse período (ié 4ms), o sinal fica em nível 1 e o restante do tempo (16ms) fica em nível zero. Se o ciclo de carga for 50%, o patamar 1 dura 10ms e o patamar zero dura 10ms.
 
-## Explica como enviar comandos para o motor
-
-O ESP32 tem geradores PWM com frequência e ciclo de carga (*duty-cycle*) ajustáveis. O ciclo de carga é codificado como um inteiro entre 0 e 1023, que correspode (linearmente) ao ciclo de carga de zero até 100%. Como o motor responde a um sinal de duração de 1-2ms, o comando do ESP vai de aprox. 50-100.
-
-Para usá-los com Micropython, digitando o programa abaixo, o servo é colocado em um ângulo perto de zero. `motor.duty()` pode ser executados com outros valores, por exemplo, 60, 100, 120, para diferentes ângulos.
-
-```python
-from machine import Pin, PWM
-p25 = Pin(25, Pin.OUT)         # configura o pino 25 como saída
-motor = PWM(p25, freq=50)      # configura o pino 25 como PWM a 50Hz
-motor.duty(40)                 # o patamar 1 dura 40/1024 do período 
-```
-Fonte: https://docs.micropython.org/en/latest/esp8266/tutorial/pwm.html#control-a-hobby-servo
-
 ## Explica como o programa foi feito
 
-```python
-p25 = Pin(25, Pin.OUT)
-motor = PWM(p25, freq=50)
-motor.duty(40)
-```
-Fonte: https://docs.micropython.org/en/latest/esp8266/tutorial/pwm.html#control-a-hobby-servo
-
-```python
-s.bind(('', 3000))   # bind to port 3000 https://docs.micropython.org/en/latest/library/socket.html#socket.socket.bind
-s.listen(2)  # allow for 2 connection before refusing https://docs.micropython.org/en/latest/library/socket.html#socket.socket.listen
-```
-
-Uma requisição GET é feita (pelo navegador) concatenando, à URL (que endereça a requisição para o servidor), os parâmetros, no formato `?<id>=<valor>` no texto da requisição.
-
-```python
-    request = conn.recv(1024)  # get bytes https://docs.micropython.org/en/latest/library/socket.html#socket.socket.recv
-    request = str(request)     # convert to string
-```
-
-Sobre o texto (string) da requisição, busca-se o parâmetro do GET:
-
-```python
-locker_on = request.find('/?locker=on') # find get request text https://www.w3schools.com/python/ref_string_find.asp
-```
-
-Em função do valor, o eixo do motor é girado a mais ou a menos:
-
-```python
-    if locker_on == 6:
-        print('LOCKER ON')
-        motor.duty(110)
-        locker_state = "ON"
-    if locker_off == 6:
-        print('LOCKER OFF')
-        motor.duty(40)
-        locker_state = "OFF"
-```
-
-Ao final, a página é reenviada (não precisaria), para permitir um novo comando abre/fecha, junto com um código de resposta `HTTP-200` que significa OK (https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+São três os arquivos utilizados pelo sistema
+├── boot.py
+├── main.py
+├── index.html
+A explicação de cada um deles pode ser encontrada no [README.md do diretório "codigo"](./codigo)
 
 ## Referências
 
@@ -150,4 +105,6 @@ Quando procurei essa informação, nas postagens, encontrei um material interess
 
 Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-repo, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks.
 
+### Features implementadas
 
+### Features para incrementar no projeto

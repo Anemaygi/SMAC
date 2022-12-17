@@ -13,11 +13,11 @@ O projeto tem por objetivo apresentar um sistema de monitoramento de temperatura
 
 ## :memo: Relatórios
 
-### - [Relatório Técnico](./tecnico/)
+### [Relatório Técnico](./tecnico/) :desktop_computer:
 
 No relatório técnico, você encontrará informações do sistema e circuito do projeto. Há informações sobre como rodar o projeto, construi-lo novamente e como contribuir com sua continuidade.
 <br/>
 
-- [Relatório do Projeto](./projeto/)
+### [Relatório do Projeto](./projeto/) :manual_wheelchair:
 
 No relatório de projeto, você encontrará informações sobre o embasamento teórico, testes realizados e resultados do projeto. Há informações de como definimos cada um dos parâmetros e maiores explicações sobre o problema escolhido.
