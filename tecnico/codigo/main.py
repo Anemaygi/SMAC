@@ -17,41 +17,45 @@ def read_ds_sensor():
       return msg
   return b'0.0'
 
-oldMoving = []
-newMoving = []
 
 def moving():
-  print("touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value()))
-  oldMoving = newMoving
-  if touchA.value() == 1:
-    newMoving.append("A")
-  elif touchA.value() == 0:
-    if "A" in newMoving:
-      newMoving.remove("A")
-  
-  if touchB.value() == 1:
-    newMoving.append("B")
-  elif touchB.value() == 0:
-    if "B" in newMoving:
-      newMoving.remove("B")
-  
-  if touchC.value() == 1:
-    newMoving.append("C")
-  elif(touchC.value() == 0):
-    if "C" in newMoving:
-      newMoving.remove("C")
-    
-  if touchD.value() == 1:
-    newMoving.append("D")
-  elif touchD.value() == 0:
-    if "D" in newMoving:
-      newMoving.remove("D")
-  
-  newMoving.sort()
-  oldMoving.sort()
-  if oldMoving!=newMoving:
+  old = "touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value())
+  sleep(3)
+  new = "touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value())
+  if old != new:
+    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
+    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
+    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
+    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
     return True
-    # mexeu
+
+  # if touchA.value() == 1:
+  #   newMoving.append("A")
+  # elif touchA.value() == 0:
+  #   if "A" in newMoving:
+  #     newMoving.remove("A")
+  
+  # if touchB.value() == 1:
+  #   newMoving.append("B")
+  # elif touchB.value() == 0:
+  #   if "B" in newMoving:
+  #     newMoving.remove("B")
+  
+  # if touchC.value() == 1:
+  #   newMoving.append("C")
+  # elif(touchC.value() == 0):
+  #   if "C" in newMoving:
+  #     newMoving.remove("C")
+    
+  # if touchD.value() == 1:
+  #   newMoving.append("D")
+  # elif touchD.value() == 0:
+  #   if "D" in newMoving:
+  #     newMoving.remove("D")
+  
+  # newMoving.sort()
+  # oldMoving.sort()
+
   return False
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -87,11 +91,11 @@ while True:
       temp = read_ds_sensor()
       conn.sendall(dumps(str(temp)))
 
-    # if request.find('GET /pega_mexer HTTP/1.1') != -1:
-    #   conn.send('HTTP/1.1 200 OK\n')
-    #   conn.send('Content-Type: application/json\n')
-    #   conn.send('Connection: close\n\n')
-    #   conn.sendall(dumps(moving()))
+    if request.find('GET /pega_mexer HTTP/1.1') != -1:
+      conn.send('HTTP/1.1 200 OK\n')
+      conn.send('Content-Type: application/json\n')
+      conn.send('Connection: close\n\n')
+      conn.sendall(dumps(moving()))
       
     conn.close()
   except OSError as e:

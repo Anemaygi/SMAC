@@ -1,4 +1,5 @@
-<div style="text-align:center"><img src="./src/SMAC.png" /></div>
+
+<div style="text-align:center"><img width="10%" src="./src/SMAC.png" /></div>
 
 Sistema de Monitoramento para Assentos de Cadeira de Roda
 
