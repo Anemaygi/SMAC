@@ -1,10 +1,17 @@
 # SMAC
 
-Sistema de Monitoramento para Assentos de Cadeira de Roda
-
-![Ilustrativo](../src/ilustrativo.jpeg) 
-
+<p align="center">
+  <img src="./src/SMAC.png" width="300" /><br/>
+  Sistema de Monitoramento para Assentos de Cadeira de Roda
+</p>
 <br/>
+
+
+Adicionar:
+- Foto do circuito
+- Diagrama do circuito
+- Diagramas de infraestrutura
+- Explicação dos códigos
 
 ## Descrição
 
@@ -50,7 +57,7 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 ## Montagem do dispositivo físico
 
-Fazer as conexões listadas, configurar, transferir e executar `digitalLocker.py` no Node e navegar para o IP indicado pelo Node.
+Fazer as conexões listadas
 
 <br/>
 
@@ -60,9 +67,9 @@ Para rodar o sistema, é necessário:
 
 - Micropython instalado na placa [tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython)
 
-- ampy para passar os arquivos para a placa
+- ampy para passar os arquivos para a placa [tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf)
 
-- _OPCIONAL:_ picocom para ver as saídas da placa
+- _OPCIONAL:_ picocom para ver as saídas da placa [tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf)
 
 São três os arquivos utilizados pelo sistema<br/>
 ```code
@@ -94,9 +101,13 @@ Figura 1 - Feito usando yEd, arquivo-fonte da figura em /docs/Rede.graphml:
 
 ![rede](/docs/Rede.png)
 
-O dispositivo (digitalLocker) conecta-se ao ponto de acesso wi-fi como um cliente wi-fi e obtém um endereço IP local. Através do navegador, outros dispositivos podem navegar (fazer requisições HTTP) para o endereço IP e receberão como resposta uma página web contendo dois botões. Clicar nos botões causa o envio de uma nova requisição (HTTP:GET) que, quando recebida pelo digitalLocker, causa o giro do servo motor e o envio da resposta para o navegador.
+O dispositivo SMAC se conecta ao ponto de acesso wi-fi como um cliente, obtendo um endereço de IP local. Outros dispositivos conectados na mesma rede local podem navegar para o endereço IP (fazendo uma requisição HTTP) e receberão como resposta a [página web](./codigo/index.html).
 
-O dispositivo pode ser visto como a interconexão do motor com o modem wifi (embutido no controlador) e o controlador. A interface entre o programador e o hardware do controlador é feita através de Micropython. O programa `digitalLocker.py` contém os comandos para conectar ao wifi (como cliente), funcionar como um servidor web e controlar o motor. Uma ilustração é apresentada na figura 2.
+A página faz novas requisições a cada 3 segundos após ser carregada. Uma requisição (GET /pegar_temp) se comunica com os sensores DS18B20 e envia a temperatura atual, atualizando-a na página. Outra requisição (GET /pegar_mexer) verifica se houve alguma mudança na leitura dos 4 sensores de toque. Caso sim, a aplicação considera que houve mudança de posição e reinicia o cronômetro que está no lado do servidor da página.
+
+Após terminar o tempo do cronômetro ou a temperatura ser maior que 37, a página envia um alerta para o usuário se mexer.
+
+O dispositivo pode ser visto como a interconexão do circuito do assento com o modem wifi (embutido no controlador) e o controlador. A interface entre o programador e o hardware do controlador é feita através de Micropython. O programa `boot.py` contém os comandos para conectar ao wifi (como cliente), `main.py` contém os comandos para funcionar como um servidor web e as requisições. Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
 
 Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
 
@@ -152,3 +163,7 @@ Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-rep
 - [x] Alerta quando passa de 37°C ou quando passa de 20 minutos sentado na mesma posição
 
 ### Features para incrementar no projeto
+
+- [ ] Conexão à internet sem precisar mexer no código em boot.py
+- [ ] Possibilidade do usuário configurar o tempo e a temperatura para os alertas
+- [ ] Aplicação rodar em segundo plano para o usuário não precisar ficar com a página aberta

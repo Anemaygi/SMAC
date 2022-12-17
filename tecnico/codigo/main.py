@@ -23,39 +23,7 @@ def moving():
   sleep(3)
   new = "touchA = "+str(touchA.value())+" touchB: "+str(touchB.value())+" touchC: "+str(touchC.value())+" touchD: "+str(touchD.value())
   if old != new:
-    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
-    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
-    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
-    print("DEUUUUU TRUEEEEEEEEEEEEEEE")
     return True
-
-  # if touchA.value() == 1:
-  #   newMoving.append("A")
-  # elif touchA.value() == 0:
-  #   if "A" in newMoving:
-  #     newMoving.remove("A")
-  
-  # if touchB.value() == 1:
-  #   newMoving.append("B")
-  # elif touchB.value() == 0:
-  #   if "B" in newMoving:
-  #     newMoving.remove("B")
-  
-  # if touchC.value() == 1:
-  #   newMoving.append("C")
-  # elif(touchC.value() == 0):
-  #   if "C" in newMoving:
-  #     newMoving.remove("C")
-    
-  # if touchD.value() == 1:
-  #   newMoving.append("D")
-  # elif touchD.value() == 0:
-  #   if "D" in newMoving:
-  #     newMoving.remove("D")
-  
-  # newMoving.sort()
-  # oldMoving.sort()
-
   return False
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
