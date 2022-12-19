@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../src/SMAC.png" width="300" /><br/>
+  <img src="../../src/SMACr.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
   <i>:desktop_computer: Relatório técnico
     <br/>:computer_mouse: Códigos</i>
@@ -12,11 +12,6 @@ São três os arquivos utilizados pelo sistema<br/>
 ├── [main.py](./main.py)<br/>
 ├── [index.html](./index.html)<br/>
 
-```code
-├── boot.py
-├── main.py
-├── index.html
-``` 
 Abaixo, há uma breve descrição e explicação de cada trecho de código para cada arquivo.
 
 <br/>

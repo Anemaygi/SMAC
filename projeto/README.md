@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/SMAC.png" width="300" /><br/>
+  <img src="./src/SMACr.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda
   <i>:manual_wheelchair: Relatório do Projeto</i>
 </p>

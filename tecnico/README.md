@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../src/SMAC.png" width="300" /><br/>
+  <img src="../src/SMACr.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
   <i>:desktop_computer: Relatório técnico</i>
 </p>
@@ -7,7 +7,6 @@
 
 Adicionar:
 - Diagrama do circuito
-- Explicação dos códigos
 
 <p align="center">
   <img src="../src/apresentacao.gif" width="300" /><br/>
@@ -165,12 +164,9 @@ O sensor digital de toque TTP223B é de simples funcionamento, mudando o sinal q
 
 ## :bookmark_tabs: Referências
 
-- [7]  XSENSOR®, Technology Corporation. Monitoramento Contínuo da Pele em Cadeiras de Rodas, Calgary, Canadá, 2022. Disponível em:
-https://pt-br.xsensor.com/solutions-and-platform/csm/wheelchair-seating
-
-
-<!-- https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
-https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request -->
+- ESP32 DS18B20 Temperature Sensor with Arduino IDE (Single, Multiple, Web Server). Disponível em:
+https://randomnerdtutorials.com/esp32-ds18b20-temperature-arduino-ide/
+- Micropython e a ESP32, Itajubá, Minas Gerais, 2020. Disponível em: http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf
 
 <br/>
 
