@@ -22,6 +22,8 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 
 ### Lista de Materiais
 
+**Nota**: Para fazer o acoplamento na almofada, uma protoboard de 400 pontos foi cortada ao meio, ocupando menos espaço.
+
 | Quantidade | Nome | Link para referência |
 | --- | --- | --- |
 | 1 | ESP32 e cabo USB | https://www.baudaeletronica.com.br/placa-doit-esp32-bluetooth-e-wifi.html |
@@ -32,7 +34,7 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 | 1 | Resistor 100 ohms | --- |
 | 1 | Fonte de alimentação - PowerBank | https://www.americanas.com.br/produto/2706391331 |
 
-**Nota**: Para fazer o acoplamento na almofada, uma protoboard de 400 pontos foi cortada ao meio, ocupando menos espaço.
+<br/>
 
 ### Conexões
 
