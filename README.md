@@ -25,3 +25,7 @@ No relatório técnico, você encontrará informações do sistema e circuito do
 ### [Relatório do Projeto](./projeto/) :manual_wheelchair:
 
 No relatório de projeto, você encontrará informações sobre o embasamento teórico, testes realizados e resultados do projeto. Há informações de como definimos cada um dos parâmetros e maiores explicações sobre o problema escolhido.
+
+<br/><br/>
+
+<p align="center">Projeto feito para a matéria de Computação Física e Aplicações (2022.2). Todas as funcionalidades propostas estavam funcionando no protótipo :)</p>
