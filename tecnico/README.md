@@ -67,10 +67,10 @@ Figura 2 - O circuito no assento sem capa<br/>
 
 O circuito segue as conexões listadas no tópico acima.
 
-Figura 3 - Diagrama do circuito
-
-<!-- Colocar diagrama do sistema aqui -->
-
+<p align="center">
+Figura 3 - Diagrama do circuito<br/>
+  <img src="../src/circuito.png" width="400" /><br/>
+</p>
 <br/>
 
 ## :desktop_computer: Funcionamento do sistema
