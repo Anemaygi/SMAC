@@ -84,9 +84,6 @@ São três os arquivos utilizados pelo sistema<br/>
 ├── main.py
 ├── index.html
 ``` 
-<br/>
-
-A explicação de como o programa foi feito e do que cada parte de código faz pode ser encontrada no [README.md do diretório "codigo"](./codigo)
 
 <br/>
 Para executar o SMAC, é necessário passar os três arquivos (`boot.py`, `main.py`, `index.html`) para a placa. Após isso, a placa enviará o endereço IP local para a saída em sua porta 80 (padrão web). 
@@ -100,6 +97,11 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
   Figura 4 - Conexão do circuito à cadeira de rodas <br/>
   <img src="../src/cadeiraatras.jpg" width="200" /><br/>
 </p>
+
+<br/>
+
+:sparkles: A explicação de como o programa foi feito e do que cada parte de código faz pode ser encontrada no [README.md do diretório "codigo"](./codigo)
+
 
 <br/>
 
