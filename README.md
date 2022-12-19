@@ -28,4 +28,4 @@ No relatório de projeto, você encontrará informações sobre o embasamento te
 
 <br/><br/>
 
-<p align="center">Projeto feito para a matéria de Computação Física e Aplicações (2022.2). Todas as funcionalidades propostas estavam funcionando no protótipo :)</p>
+<i><p align="center">Projeto feito para a matéria de Computação Física e Aplicações (2022.2). Todas as funcionalidades propostas estavam funcionando no protótipo :)</p></i>
