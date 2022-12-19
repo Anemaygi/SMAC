@@ -1,19 +1,17 @@
 <p align="center">
   <img src="../src/SMAC.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
-  :desktop: Relatório técnico
+  <i>:desktop_computer: Relatório técnico</i>
 </p>
 <br/>
 
 
 Adicionar:
-- Foto do circuito
 - Diagrama do circuito
-- Diagramas de infraestrutura
 - Explicação dos códigos
 
 <p align="center">
-  <img src="../src/apresentacao.gif" width="500" /><br/>
+  <img src="../src/apresentacao.gif" width="150" /><br/>
 </p>
 
 ## :wheelchair: Descrição
@@ -27,7 +25,7 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 
 <br/>
 
-### :wrench: Lista de Materiais
+### Lista de Materiais
 
 | Quantidade | Nome | Link para referência |
 | --- | --- | --- |
@@ -41,7 +39,7 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 
 **Nota**: Para fazer o acoplamento na almofada, uma protoboard de 400 pontos foi cortada ao meio, ocupando menos espaço.
 
-### :link: Conexões
+### Conexões
 
 | Componente | Pino da placa |
 | --- | --- |
@@ -55,7 +53,9 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 
 Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
-![Conexão com múltiplos sensores DS18B20](../src/ds18b20_esp32_multiple.webp) 
+<p align="center">
+  <img src=".../src/ds18b20_esp32_multiple.webp" width="150" /><br/>
+</p>
 
 <br/>
 
@@ -113,9 +113,11 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 ## :keyboard: Arquitetura e organização
 
-<!-- Figura 1 - Feito usando yEd, arquivo-fonte da figura em /docs/Rede.graphml:
+Figura 1 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:
 
-![rede](/docs/Rede.png) -->
+<p align="center">
+  <img src="../src/Rede.png" width="200" /><br/>
+</p>
 
 O dispositivo SMAC se conecta ao ponto de acesso wi-fi como um cliente, obtendo um endereço de IP local. Outros dispositivos conectados na mesma rede local podem navegar para o endereço IP (fazendo uma requisição HTTP) e receberão como resposta a [página web](./codigo/index.html).
 
@@ -124,7 +126,7 @@ A página faz novas requisições a cada 3 segundos após ser carregada. Uma req
 Após terminar o tempo do cronômetro ou a temperatura ser maior que 37, a página envia um alerta para o usuário se mexer.
 
 <p align="center">
-  <img src="../src/interface.jpg" height="300" /><img src="../src/interfaceaviso.jpg" height="300" /><br/>
+  <img src="../src/interface.jpg" height="300" /> <img src="../src/interfaceaviso.jpg" height="300" /><br/>
 </p>
 
 
@@ -133,9 +135,11 @@ O dispositivo pode ser visto como a interconexão do circuito do assento com o m
 - `main.py` contém os comandos para funcionar como um servidor web e as requisições
 - Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
 
-<!-- Figura 2- Feito usando yEd, arquivo-fonte da figura em /docs/layerModel.graphml:
+Figura 2- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:
 
-![camadas](/docs/layerModel.png) -->
+<p align="center">
+  <img src="../src/layerModel.png" width="200" /><br/>
+</p>
 
 <br/>
 
