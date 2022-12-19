@@ -1,3 +1,30 @@
+<p align="center">
+  <img src="../src/SMAC.png" width="300" /><br/>
+  Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
+  :desktop: Relatório técnico
+    :computer_mouse: Códigos
+</p>
+<br/>
+
+# boot.py
+
+## Descrição
+
+## Passo a passo
+
+
+# main.py
+
+## Descrição
+
+## Passo a passo
+
+
+# index.html
+
+## Descrição
+
+## Passo a passo
 
 ```python
 p25 = Pin(25, Pin.OUT)

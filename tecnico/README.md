@@ -1,8 +1,7 @@
-# SMAC
-
 <p align="center">
   <img src="../src/SMAC.png" width="300" /><br/>
-  Sistema de Monitoramento para Assentos de Cadeira de Roda
+  Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
+  :desktop: Relatório técnico
 </p>
 <br/>
 
@@ -13,17 +12,22 @@ Adicionar:
 - Diagramas de infraestrutura
 - Explicação dos códigos
 
-## Descrição
+<p align="center">
+  <img src="../src/apresentacao.gif" width="500" /><br/>
+</p>
 
-Na animação, a fechadura foi acessada em 192.168.0.11:3000. Digitar esse endereço (número) na barra de endereço do navegador faz este mostrar a página do digitalLocker.
+## :wheelchair: Descrição
 
-Clicar no botão OFF para abrir, clicar no botão ON para fechar.
+Na animação, o usuário está na porta 80 do endereço de IP do assento pelo navegador. Após ficar 20 minutos sentado na mesma posição, a página envia um alerta para ele se mexer e reinicia o cronômetro.
 
-O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o programa é iniciado, o IP é mostrado no REPL ou na IDE que você estiver usando. Navegar para <IP>:3000 o que mostra a página com dois botões. O programa executado pelo Node é `digitalLocker.py`.
+O dispositivo NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando os programas são iniciados, o IP é mostrado em algum programa que mostre a saída. Basta navegar para <IP>:80 no navegador para ver a página inicial, que possui a temperatura entre assento e a pessoa e o tempo no qual ela está sentada na mesma posição. 
+
+Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37° C, a página envia um alerta para que o usuário sente em outra posição. Caso ele sente em outra posição antes dos 20 minutos, o cronômetro é iniciado.
+
 
 <br/>
 
-### Lista de Materiais
+### :wrench: Lista de Materiais
 
 | Quantidade | Nome | Link para referência |
 | --- | --- | --- |
@@ -37,7 +41,7 @@ O NodeMCU conecta-se ao wifi local e funciona como um servidor web. Quando o pro
 
 **Nota**: Para fazer o acoplamento na almofada, uma protoboard de 400 pontos foi cortada ao meio, ocupando menos espaço.
 
-### Conexões
+### :link: Conexões
 
 | Componente | Pino da placa |
 | --- | --- |
@@ -55,7 +59,7 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 <br/>
 
-## Montagem do dispositivo físico
+## :electric_plug: Montagem do dispositivo físico
 
 Faça quatro furos de estilete na almofada. Em cada furo, adicione um sensor de temperatura e um sensor de toque. 
 
@@ -73,7 +77,7 @@ Figura 2 - Diagrama do circuito
 
 <br/>
 
-## Funcionamento do sistema
+## :desktop_computer: Funcionamento do sistema
 
 Para rodar o sistema, é necessário:
 
@@ -107,7 +111,7 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 <br/>
 
-## Arquitetura e organização
+## :keyboard: Arquitetura e organização
 
 <!-- Figura 1 - Feito usando yEd, arquivo-fonte da figura em /docs/Rede.graphml:
 
@@ -135,7 +139,7 @@ O dispositivo pode ser visto como a interconexão do circuito do assento com o m
 
 <br/>
 
-## Funcionamento dos sensores
+## :computer_mouse: Funcionamento dos sensores
 
 ### Sensor de temperatura DS18B20 tipo TO92
 
@@ -158,14 +162,14 @@ O sensor digital de toque TTP223B é de simples funcionamento, mudando o sinal q
 
 <br/>
 
-## Referências
+## :bookmark_tabs: Referências
 
 <!-- https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request -->
 
 <br/>
 
-## Colaborar usando github (meta)
+## :woman_technologist: Colaborar usando github (meta)
 
 <!-- A maneira indicada pelo mantenedor do github para colaborar com projetos hospedados nele é através de bifurcação e pull request: https://stackoverflow.com/questions/32750228/how-to-contribute-to-someone-elses-repository.
 
@@ -184,6 +188,8 @@ Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-rep
 
 ### Features para incrementar no projeto
 
+- [ ] Cronômetro do lado do servidor
 - [ ] Conexão à internet sem precisar mexer no código em boot.py
 - [ ] Possibilidade do usuário configurar o tempo e a temperatura para os alertas
 - [ ] Aplicação rodar em segundo plano para o usuário não precisar ficar com a página aberta
+
