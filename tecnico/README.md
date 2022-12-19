@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../src/SMACr.png" width="300" /><br/>
+  <img src="../src/SMACfundo.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
   <i>:desktop_computer: Relatório técnico</i>
 </p>
