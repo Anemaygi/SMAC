@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../src/SMAC.png" width="300" /><br/>
+  <img src="../../src/SMAC.png" width="300" /><br/>
   Sistema de Monitoramento para Assentos de Cadeira de Roda<br/>
   :desktop_computer: Relatório técnico
     :computer_mouse: Códigos
@@ -12,7 +12,7 @@ São três os arquivos utilizados pelo sistema<br/>
 ├── main.py
 ├── index.html
 ``` 
-<br/> Abaixo, há uma breve descrição e explicação de cada trecho de código para cada arquivo.
+Abaixo, há uma breve descrição e explicação de cada trecho de código para cada arquivo.
 <br/>
 
 
@@ -34,7 +34,8 @@ Primeiramente, o arquivo importa as bibliotecas que serão usadas no projeto. El
 - esp: Módulo com funções relacionadas ao ESP8266 e ESP32. Utilizamos sua função esp.osdebug(None) para desativar mensagens de debug de seu sistema operacional.
 - gc: Garbage colector. Coleta as variáveis não acessíveis.
 
-```try:
+```py
+try:
   import usocket as socket
 except:
   import socket
