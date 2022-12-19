@@ -86,7 +86,7 @@ São três os arquivos utilizados pelo sistema<br/>
 ``` 
 
 <br/>
-Para executar o SMAC, é necessário passar os três arquivos ( `boot.py` , `main.py` , `index.html` ) para a placa. Após isso, a placa enviará o endereço IP local para a saída em sua porta 80 (padrão web). 
+Para executar o SMAC, é necessário passar os três arquivos para a placa. Após isso, a placa enviará o endereço IP local para a saída em sua porta 80 (padrão web). 
 
 <br/>
 
