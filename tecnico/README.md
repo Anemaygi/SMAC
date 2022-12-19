@@ -51,10 +51,9 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 
 **Nota**: O sensor de temperatura DS18B20 permite que sejam adicionados múltiplos sensores num mesmo pino, economizando conexões da placa. Para utilizá-lo, é necessário utilizar o resistor de 100 ohm seguindo o diagrama abaixo.
 
-Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
-
 <p align="center">
-  <img src="../src/ds18b20_esp32_multiple.webp" width="200" /><br/>
+Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino <br/>
+  <img src="../src/ds18b20_esp32_multiple.webp" width="300" /><br/>
 </p>
 
 <br/>
@@ -63,15 +62,14 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 Faça quatro furos de estilete na almofada. Em cada furo, adicione um sensor de temperatura e um sensor de toque. 
 
-Figura 1 - O circuito no assento sem capa
-
 <p align="center">
+Figura 2 - O circuito no assento sem capa<br/>
   <img src="../src/capa.png" width="200" /><br/>
 </p>
 
 O circuito segue as conexões listadas no tópico acima.
 
-Figura 2 - Diagrama do circuito
+Figura 3 - Diagrama do circuito
 
 <!-- Colocar diagrama do sistema aqui -->
 
@@ -106,6 +104,7 @@ Para executar o SMAC, é necessário passar os três arquivos (`boot.py`, `main.
 O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 <p align="center">
+  Figura 4 - Conexão do circuito à cadeira de rodas <br/>
   <img src="../src/cadeiraatras.jpg" width="200" /><br/>
 </p>
 
@@ -114,7 +113,7 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 ## :keyboard: Arquitetura e organização
 
 <p align="center">
-Figura 1 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:
+Figura 5 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:<br/>
   <img src="../src/Rede.png" width="400" /><br/>
 </p>
 
@@ -124,7 +123,8 @@ A página faz novas requisições a cada 3 segundos após ser carregada. Uma req
 
 Após terminar o tempo do cronômetro ou a temperatura ser maior que 37, a página envia um alerta para o usuário se mexer.
 
-<p align="center">
+<p align="center"></br>
+  Figuras 6 e 7 - Interface web
   <img src="../src/interface.jpg" height="300" /> <img src="../src/interfaceaviso.jpg" height="300" /><br/>
 </p>
 
@@ -135,7 +135,7 @@ O dispositivo pode ser visto como a interconexão do circuito do assento com o m
 - Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
 
 <p align="center">
-Figura 2- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:
+Figura 8- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:</br>
   <img src="../src/layerModel.png" width="400" /><br/>
 </p>
 
