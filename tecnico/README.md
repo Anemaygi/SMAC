@@ -5,9 +5,6 @@
 </p>
 <br/>
 
-Adicionar:
-- Diagrama do circuito
-
 <p align="center">
   <img src="../src/apresentacao.gif" width="300" /><br/>
 </p>
@@ -58,14 +55,12 @@ Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino <br/>
 
 ## :electric_plug: Montagem do dispositivo físico
 
-Faça quatro furos de estilete na almofada. Em cada furo, adicione um sensor de temperatura e um sensor de toque. 
+Faça quatro furos de estilete na almofada. Em cada furo, adicione um sensor de temperatura e um sensor de toque. O circuito segue as conexões listadas no tópico acima.
 
 <p align="center">
 Figura 2 - O circuito no assento sem capa<br/>
   <img src="../src/capa.png" width="200" /><br/>
 </p>
-
-O circuito segue as conexões listadas no tópico acima.
 
 <p align="center">
 Figura 3 - Diagrama do circuito<br/>
@@ -170,15 +165,15 @@ https://randomnerdtutorials.com/esp32-ds18b20-temperature-arduino-ide/
 
 <br/>
 
-## :woman_technologist: Colaborar usando github (meta)
+## :woman_technologist: Colaborar no projeto
 
-<!-- A maneira indicada pelo mantenedor do github para colaborar com projetos hospedados nele é através de bifurcação e pull request: https://stackoverflow.com/questions/32750228/how-to-contribute-to-someone-elses-repository.
+O protótipo original foi doado para o professor Fábio Nakano da Escola de Artes, Ciências e Humanidades da Universidade de São Paulo.
 
-É possível ser colaborador do projeto e fazer pull/push (https://stackoverflow.com/questions/42619669/how-to-make-branch-from-friends-repository), mas isto pode gerar confusão (quando fiz isso com outra pessoa eu a confundi e ela acabou reiniciando o repositório - `git init` - não foi um bom resultado).
+Para colaborar, pode utilizar o protótipo original ou criar um novo a partir da documentação. Qualquer avanço no desenvolvimento pode ser adicionado a este repositório por meio de um **pull request**. Para mais informações, acesse os links:
+- https://stackoverflow.com/questions/32750228/how-to-contribute-to-someone-elses-repository
+- https://stackoverflow.com/questions/42619669/how-to-make-branch-from-friends-repository
 
-Quando procurei essa informação, nas postagens, encontrei um material interessante sobre a organização (interna) do git: https://stackoverflow.com/tags/git/info
-
-Sobre bifurcação: https://docs.github.com/pt/get-started/quickstart/fork-a-repo, https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks. -->
+Abaixo há uma lista de features que foram implementadas (todas as funções propostas no projeto :)) e features que podem ser desenvolvidas nos próximos passos.
 
 ### Features implementadas
 
