@@ -11,7 +11,7 @@ Adicionar:
 - Explicação dos códigos
 
 <p align="center">
-  <img src="../src/apresentacao.gif" width="150" /><br/>
+  <img src="../src/apresentacao.gif" width="300" /><br/>
 </p>
 
 ## :wheelchair: Descrição
@@ -54,7 +54,7 @@ Após passar 20 minutos na mesma posição ou a temperatura estar maior que 37°
 Figura 1 - Conexão de múltiplos sensores DS18B20 no mesmo pino
 
 <p align="center">
-  <img src=".../src/ds18b20_esp32_multiple.webp" width="150" /><br/>
+  <img src="../src/ds18b20_esp32_multiple.webp" width="200" /><br/>
 </p>
 
 <br/>
@@ -113,10 +113,9 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 
 ## :keyboard: Arquitetura e organização
 
-Figura 1 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:
-
 <p align="center">
-  <img src="../src/Rede.png" width="200" /><br/>
+Figura 1 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:
+  <img src="../src/Rede.png" width="400" /><br/>
 </p>
 
 O dispositivo SMAC se conecta ao ponto de acesso wi-fi como um cliente, obtendo um endereço de IP local. Outros dispositivos conectados na mesma rede local podem navegar para o endereço IP (fazendo uma requisição HTTP) e receberão como resposta a [página web](./codigo/index.html).
@@ -135,10 +134,9 @@ O dispositivo pode ser visto como a interconexão do circuito do assento com o m
 - `main.py` contém os comandos para funcionar como um servidor web e as requisições
 - Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
 
-Figura 2- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:
-
 <p align="center">
-  <img src="../src/layerModel.png" width="200" /><br/>
+Figura 2- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:
+  <img src="../src/layerModel.png" width="400" /><br/>
 </p>
 
 <br/>
@@ -167,6 +165,10 @@ O sensor digital de toque TTP223B é de simples funcionamento, mudando o sinal q
 <br/>
 
 ## :bookmark_tabs: Referências
+
+- [7]  XSENSOR®, Technology Corporation. Monitoramento Contínuo da Pele em Cadeiras de Rodas, Calgary, Canadá, 2022. Disponível em:
+https://pt-br.xsensor.com/solutions-and-platform/csm/wheelchair-seating
+
 
 <!-- https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#http-get-request -->
