@@ -5,7 +5,6 @@
 </p>
 <br/>
 
-
 Adicionar:
 - Diagrama do circuito
 - Explicação dos códigos
@@ -113,7 +112,7 @@ O circuito deve sair por trás do assento e ser conectado com um powerbank.
 ## :keyboard: Arquitetura e organização
 
 <p align="center">
-Figura 5 - Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml) por Fábio Nakano:<br/>
+Figura 5 - Feito usando yEd, <a href="https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/Rede.graphml">arquivo-fonte da figura</a> por Fábio Nakano:<br/>
   <img src="../src/Rede.png" width="400" /><br/>
 </p>
 
@@ -124,7 +123,7 @@ A página faz novas requisições a cada 3 segundos após ser carregada. Uma req
 Após terminar o tempo do cronômetro ou a temperatura ser maior que 37, a página envia um alerta para o usuário se mexer.
 
 <p align="center"></br>
-  Figuras 6 e 7 - Interface web
+  Figuras 6 e 7 - Interface web<br/>
   <img src="../src/interface.jpg" height="300" /> <img src="../src/interfaceaviso.jpg" height="300" /><br/>
 </p>
 
@@ -135,7 +134,7 @@ O dispositivo pode ser visto como a interconexão do circuito do assento com o m
 - Por fim, `index.html` é a página que é carregada pelo servidor web em main.py. 
 
 <p align="center">
-Figura 8- Feito usando yEd, [arquivo-fonte da figura](https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml) por Fábio Nakano:</br>
+Figura 8- Feito usando yEd, <a href="https://raw.githubusercontent.com/JadnoABS/digitalLocker/main/docs/layerModel.graphml">arquivo-fonte da figura</a> por Fábio Nakano:</br>
   <img src="../src/layerModel.png" width="400" /><br/>
 </p>
 

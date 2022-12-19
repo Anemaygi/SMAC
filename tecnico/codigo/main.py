@@ -31,7 +31,6 @@ s.bind(('', 80))
 s.listen(5)
 
 while True:
-  
   try:
     if gc.mem_free() < 102000:
       gc.collect()
@@ -64,7 +63,7 @@ while True:
       conn.send('Content-Type: application/json\n')
       conn.send('Connection: close\n\n')
       conn.sendall(dumps(moving()))
-      
+
     conn.close()
   except OSError as e:
     conn.close()
