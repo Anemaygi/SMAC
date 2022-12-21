@@ -66,7 +66,7 @@ Figura 2 - O circuito no assento sem capa<br/>
 
 <p align="center">
 Figura 3 - Diagrama do circuito<br/>
-  <img src="../src/circuito.png" width="400" /><br/>
+  <img src="../src/circuitoa.png" width="400" /><br/>
 </p>
 <br/>
 
