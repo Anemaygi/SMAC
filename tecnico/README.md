@@ -74,11 +74,11 @@ Figura 3 - Diagrama do circuito<br/>
 
 Para rodar o sistema, é necessário:
 
-- Micropython instalado na placa ([tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython))
+- Micropython instalado na placa ([Tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython))
 
-- ampy para passar os arquivos para a placa ([tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf))
+- ampy para passar os arquivos para a placa ([Tutorial](https://github.com/FNakano/CFA/tree/master/programas/Micropython/ampy))
 
-- _OPCIONAL:_ picocom para ver as saídas da placa ([tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf))
+- _OPCIONAL:_ picocom para ver as saídas da placa ([Tutorial](http://pettec.unifei.edu.br/wp-content/uploads/2020/12/PET_TEC_tutorial_micropython.pdf))
 
 São três os arquivos utilizados pelo sistema<br/>
 ```code
